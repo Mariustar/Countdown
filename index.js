@@ -8,14 +8,8 @@ class Timer {
   }
 
   start() {
-    console.log(this);
-
+    console.log("Hello");
   }
-
-  // importantMethodToCall() {
-  //   console.log("Important thing was called");
-  // }
-
 }
 
 const durationInput = document.querySelector("#duration");
@@ -24,24 +18,3 @@ const pauseButton = document.querySelector("#pause");
 
 const timer = new Timer(durationInput, startButton, pauseButton);
 
-// console.log(this);
-// const printThis = () => {
-//   console.log(this);
-// }
-
-
-const colors= {
-  printColor() {
-    console.log(this);
-  },
-  "Marius": "Ionut"
-}
-
-const randomObject = {
-  a : 1
-}
-
-randomObject.printColor = colors.printColor;
-
-colors.printColor();
-randomObject.printColor();
