@@ -1,0 +1,50 @@
+.circle {
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.time-box {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+
+.button-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  margin-top: 1rem;
+}
+
+.button-box i {
+  height: 2rem;
+  width: 4rem;
+  font-size: 3rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.button-box i:hover {
+  color: red;
+}
+
+.button-box button {
+  background: none;
+  border: none;
+}
+
+#duration {
+  font-size: 4rem;
+  max-width: 13rem;
+  border: none;
+  text-align: center;
+}
