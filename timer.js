@@ -7,6 +7,7 @@ export default class Timer {
       this.onStart = callbacks.onStart;
       this.onTick = callbacks.onTick;
       this.onComplete = callbacks.onComplete;
+      this.onPause = callbacks.onPause;
     }
     startButton.addEventListener("click", this.start);
     pauseButton.addEventListener("click", this.pause);
@@ -20,6 +21,9 @@ export default class Timer {
   };
 
   pause = () => {
+    if (this.onPause) {
+      this.onPause();
+    }
     clearInterval(this.intervalId);
   };
 

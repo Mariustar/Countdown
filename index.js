@@ -14,4 +14,7 @@ const timer = new Timer(durationInput, startButton, pauseButton, {
   onComplete() {
     console.log("Completed!");
   },
+  onPause() {
+    console.log("Paused!");
+  },
 });
