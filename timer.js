@@ -17,6 +17,7 @@ export default class Timer {
     if (this.onStart) {
       this.onStart();
     }
+    this.tick();
     this.intervalId = setInterval(this.tick, 1000);
   };
 
@@ -28,15 +29,16 @@ export default class Timer {
   };
 
   tick = () => {
-    if (this.onTick) {
-      this.onTick();
-    }
-    if (this.timeRemaining <= 1) {
+    if (this.timeRemaining <= 0) {
       this.pause();
-      this.onComplete();
-      this.timeRemaining = 0;
+      if (this.onComplete) {
+        this.onComplete();
+      }
     } else {
       this.timeRemaining -= 1;
+    }
+    if (this.onTick) {
+      this.onTick();
     }
   };
 

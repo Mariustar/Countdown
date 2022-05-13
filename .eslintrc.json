@@ -23,6 +23,7 @@
       }
     ],
     "no-unused-vars": ["off"],
-    "import/extensions": "off"
+    "import/extensions": "off",
+    "allowTemplateLiterals": true
   }
 }
