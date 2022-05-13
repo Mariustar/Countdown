@@ -10,18 +10,19 @@ const perimeter = Math.round(circle.getAttribute("r") * 2 * Math.PI);
 // @ts-ignore
 circle.setAttribute("stroke-dasharray", perimeter);
 
-let currentOffset = 0;
+let duration = 0;
 
 const timer = new Timer(durationInput, startButton, pauseButton, {
-  onStart() {
-    console.log("Timer Started!");
+  onStart(totalDuration) {
+    duration = totalDuration;
+    console.log("Started");
   },
-  onTick() {
-    circle.setAttribute("stroke-dashoffset", currentOffset);
-    currentOffset -= perimeter / this.durationInput.value;
-    if (currentOffset <= -perimeter) {
-      currentOffset = -perimeter;
-    }
+  onTick(timeRemaining) {
+    circle.setAttribute(
+      "stroke-dashoffset",
+      // @ts-ignore
+      (perimeter * timeRemaining) / duration - perimeter,
+    );
   },
   onComplete() {
     console.log("Completed!");
