@@ -24,6 +24,6 @@
     ],
     "no-unused-vars": ["off"],
     "import/extensions": "off",
-    "allowTemplateLiterals": true
+    "allowTemplateLiterals": "off"
   }
 }
