@@ -15,20 +15,26 @@
     <title>Countdown</title>
   </head>
   <body>
-    <svg height="400" width="400">
-      <circle
-        class="circle"
-        r="180"
-        cx="200"
-        cy="200"
-        fill="transparent"
-        stroke="blue"
-        stroke-width="20"
-      />
-    </svg>
-    <input id="duration" type="text" value="30" />
-    <button id="start"><i class="fa-solid fa-play"></i></button>
-    <button id="pause"><i class="fa-solid fa-pause"></i></button>
+    <div class="main-container">
+      <svg height="400" width="400">
+        <circle
+          class="circle"
+          r="180"
+          cx="200"
+          cy="200"
+          fill="transparent"
+          stroke="blue"
+          stroke-width="20"
+        />
+      </svg>
+      <div class="time-box">
+        <input id="duration" type="text" value="0" />
+        <div class="button-box">
+          <button id="start"><i class="fa-solid fa-play"></i></button>
+          <button id="pause"><i class="fa-solid fa-pause"></i></button>
+        </div>
+      </div>
+    </div>
     <script src="/index.js" type="module"></script>
   </body>
 </html>
