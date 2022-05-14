@@ -17,12 +17,13 @@ export default class Timer {
     if (this.onStart) {
       this.onStart(this.timeRemaining);
     }
-    this.tick();
     this.intervalId = setInterval(this.tick, 20);
+    this.startButton.classList.add("unclickable");
   };
 
   pause = () => {
     clearInterval(this.intervalId);
+    this.startButton.classList.remove("unclickable");
   };
 
   tick = () => {

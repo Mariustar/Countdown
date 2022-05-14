@@ -15,7 +15,6 @@ let duration = 0;
 const timer = new Timer(durationInput, startButton, pauseButton, {
   onStart(totalDuration) {
     duration = totalDuration;
-    console.log("Started");
   },
   onTick(timeRemaining) {
     circle.setAttribute(
@@ -24,10 +23,10 @@ const timer = new Timer(durationInput, startButton, pauseButton, {
       (perimeter * timeRemaining) / duration - perimeter,
     );
   },
-  onComplete() {
-    console.log("Completed!");
-  },
-  onPause() {
-    console.log("Paused!");
-  },
+  // onComplete() {
+  //   console.log("Completed!");
+  // },
+  // onPause() {
+  //   console.log("Paused!");
+  // },
 });
