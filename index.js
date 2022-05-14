@@ -36,5 +36,9 @@ const timer = new Timer(durationInput, startButton, pauseButton, resetButton, {
   onReset() {
     circle.setAttribute("stroke-dashoffset", 0);
     durationInput.value = 0;
+    counter = 0;
+  },
+  onChange() {
+    counter = 0;
   },
 });

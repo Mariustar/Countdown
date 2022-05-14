@@ -10,10 +10,12 @@ export default class Timer {
       this.onComplete = callbacks.onComplete;
       this.onPause = callbacks.onPause;
       this.onReset = callbacks.onReset;
+      this.onChange = callbacks.onChange;
     }
     startButton.addEventListener("click", this.start);
     pauseButton.addEventListener("click", this.pause);
     resetButton.addEventListener("click", this.reset);
+    durationInput.addEventListener("input", this.onChange);
   }
 
   start = () => {
@@ -26,7 +28,7 @@ export default class Timer {
 
   pause = () => {
     if (this.onPause) {
-      this.onPause();
+      this.onPause(this.timeRemaining);
     }
     clearInterval(this.intervalId);
     this.startButton.classList.remove("unclickable");
@@ -48,6 +50,9 @@ export default class Timer {
       this.timeRemaining -= 0.02;
       if (this.onTick) {
         this.onTick(this.timeRemaining);
+      }
+      if (this.onChange) {
+        this.onChange();
       }
     }
   };
