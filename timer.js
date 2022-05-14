@@ -1,16 +1,19 @@
 export default class Timer {
-  constructor(durationInput, startButton, pauseButton, callbacks) {
+  constructor(durationInput, startButton, pauseButton, resetButton, callbacks) {
     this.durationInput = durationInput;
     this.startButton = startButton;
     this.pauseButton = pauseButton;
+    this.resetButton = resetButton;
     if (callbacks) {
       this.onStart = callbacks.onStart;
       this.onTick = callbacks.onTick;
       this.onComplete = callbacks.onComplete;
       this.onPause = callbacks.onPause;
+      this.onReset = callbacks.onReset;
     }
     startButton.addEventListener("click", this.start);
     pauseButton.addEventListener("click", this.pause);
+    resetButton.addEventListener("click", this.reset);
   }
 
   start = () => {
@@ -22,16 +25,22 @@ export default class Timer {
   };
 
   pause = () => {
+    if (this.onPause) {
+      this.onPause();
+    }
     clearInterval(this.intervalId);
     this.startButton.classList.remove("unclickable");
+  };
+
+  reset = () => {
+    if (this.onReset) {
+      this.onReset();
+    }
   };
 
   tick = () => {
     if (this.timeRemaining <= 0) {
       this.pause();
-      if (this.onComplete) {
-        this.onComplete();
-      }
     } else {
       this.timeRemaining -= 0.02;
       if (this.onTick) {
