@@ -11,8 +11,7 @@ const perimeter = Math.round(circle.getAttribute("r") * 2 * Math.PI);
 // @ts-ignore
 circle.setAttribute("stroke-dasharray", perimeter);
 
-let duration = durationInput.value;
-console.log(duration);
+let duration = 0;
 
 const timer = new Timer(durationInput, startButton, pauseButton, resetButton, {
   onStart(totalDuration) {
@@ -21,14 +20,10 @@ const timer = new Timer(durationInput, startButton, pauseButton, resetButton, {
   onTick(timeRemaining) {
     const strokeValue = (perimeter * timeRemaining) / duration - perimeter;
     circle.setAttribute("stroke-dashoffset", strokeValue);
-
-    // console.log((perimeter * timeRemaining) / duration - perimeter);
   },
-  // onPause(timeRemaining) {
-  //   const strokeValueOnPause =
-  //     (perimeter * timeRemaining) / duration - perimeter;
-  //   circle.setAttribute("stroke-dashoffset", strokeValueOnPause);
-  // },
+  onComplete() {
+    circle.setAttribute("stroke-dashoffset", perimeter);
+  },
   onReset() {
     durationInput.value = 0;
   },

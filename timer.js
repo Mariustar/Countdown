@@ -41,6 +41,9 @@ export default class Timer {
   tick = () => {
     if (this.timeRemaining <= 0) {
       this.pause();
+      if (this.onComplete) {
+        this.onComplete();
+      }
     } else {
       this.timeRemaining -= 0.02;
       if (this.onTick) {
