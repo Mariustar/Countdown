@@ -35,6 +35,7 @@
   font-size: 3rem;
   background: none;
   border: none;
+  outline: none;
   cursor: pointer;
 }
 
@@ -49,6 +50,7 @@
 .button-box button {
   background: none;
   border: none;
+  outline: none;
 }
 
 #duration {
