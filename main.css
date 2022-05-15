@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 95vh;
 }
 
 .time-box {
@@ -52,4 +52,30 @@
   max-width: 13rem;
   border: none;
   text-align: center;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 450px) {
+  .main-container svg {
+    height: 200px;
+    width: 200px;
+  }
+
+  .main-container .circle {
+    r: 90;
+    cx: 100;
+    cy: 100;
+    stroke-width: 10;
+  }
+  #duration {
+    font-size: 2rem;
+    max-width: 7rem;
+  }
+
+  .button-box i {
+    height: 1.3rem;
+    width: 2rem;
+    font-size: 2rem;
+  }
 }
