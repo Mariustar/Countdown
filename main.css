@@ -58,24 +58,24 @@
 
 @media only screen and (max-width: 450px) {
   .main-container svg {
-    height: 200px;
-    width: 200px;
+    height: 300px;
+    width: 300px;
   }
 
   .main-container .circle {
-    r: 90;
-    cx: 100;
-    cy: 100;
-    stroke-width: 10;
+    r: 135;
+    cx: 150;
+    cy: 150;
+    stroke-width: 15;
   }
   #duration {
-    font-size: 2rem;
-    max-width: 7rem;
+    font-size: 3rem;
+    max-width: 11rem;
   }
 
   .button-box i {
-    height: 1.3rem;
-    width: 2rem;
-    font-size: 2rem;
+    height: 2rem;
+    width: 2.2rem;
+    font-size: 2.6rem;
   }
 }
